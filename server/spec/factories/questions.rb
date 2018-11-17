@@ -3,6 +3,6 @@
 FactoryBot.define do
     factory :question do
       question { Faker::Lorem.word }
-      created_at { Faker::Number.number(10) }
+      created_at { Faker::Number.number(digits = 10) }
     end
   end

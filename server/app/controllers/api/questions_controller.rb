@@ -1,14 +1,14 @@
 class Api::QuestionsController < ApplicationController
 
     # GET 
-    def all
+    def index
       @questions = Question.all
       json_response(@questions)
     end
   
     # POST /questions
     def create
-      @questions = Question.create!(:question_params)
+      @questions = Question.create!(question_params)
       json_response(@questions, :created)
     end
   
@@ -21,7 +21,7 @@ class Api::QuestionsController < ApplicationController
     # PUT /questions/:id
     def update
       @question = Question.find(params[:id])
-      @question.update(:question_params)
+      @question.update(question_params)
       head :no_content
     end
   
@@ -35,6 +35,6 @@ class Api::QuestionsController < ApplicationController
     private
 
     def question_params
-        params.require(:question).permit(:question)
+        params.permit(:question)
       end
 end
