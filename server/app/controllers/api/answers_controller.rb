@@ -1,7 +1,7 @@
 class Api::AnswersController < ApplicationController
 
      # GET 
-     def all
+     def index
         @answers = Answer.all
         json_response(@answers)
       end
