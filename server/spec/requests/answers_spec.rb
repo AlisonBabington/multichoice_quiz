@@ -1,4 +1,3 @@
-
   require 'rails_helper'
 
   RSpec.describe 'Answers API', type: :request do
@@ -86,7 +85,7 @@
       let(:valid_attributes) { { option: 'another' } }
   
       context 'when the record exists' do
-        before { put "/todos/#{answer_id}", params: valid_attributes }
+        before { put "/api/answers/#{answer_id}", params: valid_attributes }
   
         it 'updates the record' do
           expect(response.body).to be_empty
@@ -100,7 +99,7 @@
   
     # Test suite for DELETE /answers/:id
     describe 'DELETE /api/answers/:id' do
-      before { delete "/answers/#{answer_id}" }
+      before { delete "/api/answers/#{answer_id}" }
   
       it 'returns status code 204' do
         expect(response).to have_http_status(204)
