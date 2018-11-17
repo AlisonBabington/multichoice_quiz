@@ -8,7 +8,7 @@ class Api::AnswersController < ApplicationController
     
       # POST 
       def create
-        @answers = Answer.create!(:answers)
+        @answers = Answer.create!(answer_params)
         json_response(@answers, :created)
       end
     
@@ -20,7 +20,7 @@ class Api::AnswersController < ApplicationController
     
       # PUT /answers/:id
       def update
-        @questions.update(:answer)
+        @questions.update(answer_params)
         head :no_content
       end
     
@@ -29,6 +29,12 @@ class Api::AnswersController < ApplicationController
         @answer = Answer.find(params[:id])
         @answer.destroy
         head :no_content
+      end
+
+      private
+
+      def answer_params
+        params.permit(:option, :score)
       end
 
 end
