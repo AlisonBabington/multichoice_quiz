@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { questionsFetchData } from '../actions/questions';
 import { answersFetchData } from '../actions/answers';
+import UserName from './UserName';
 
 
 class Main extends Component {
@@ -13,12 +15,11 @@ class Main extends Component {
     
     render (){
         return (
-            <div>
-                <ul>
-                <h1>hi</h1>
-                  <h2></h2>
-                </ul>
-            </div>
+            <Router>
+            <Fragment>
+               <Route exact path='/' component={UserName}/>
+            </Fragment>
+            </Router>
         )
     } 
 }
