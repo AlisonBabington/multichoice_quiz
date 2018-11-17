@@ -26,7 +26,7 @@ class Main extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        state,
+        ...state,
         questions: state.questions,
         answers: state.answers   
     }
