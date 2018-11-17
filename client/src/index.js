@@ -6,7 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore';
 
-  
+
+
 //initialise store
 const store = configureStore();
 
@@ -19,5 +20,6 @@ render (
 document.getElementById('root')
 );
 
+store.dispatch({ type: 'GET_QUESTIONS' })
 
 serviceWorker.unregister();

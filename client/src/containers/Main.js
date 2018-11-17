@@ -6,7 +6,7 @@ import { questionsFetchData } from '../actions/questions';
 class Main extends Component {
 
     componentDidMount () {
-        this.props.fetchData('http://localhost:8080/api/questions')
+        this.props.fetchData()
     }
     
     render (){
@@ -23,7 +23,6 @@ class Main extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         state,
         questions: state.questions
@@ -33,7 +32,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: (url) => dispatch(questionsFetchData(url))
+        fetchData: (url) => dispatch(questionsFetchData())
     };
 };
 
