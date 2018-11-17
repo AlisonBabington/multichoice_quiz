@@ -7,9 +7,9 @@
     let(:answer_id) { answers.first.id }
   
     # Test suite for GET 
-    describe 'GET /answers' do
+    describe 'GET /api/answers' do
       # make HTTP get request before each example
-      before { get '/answers' }
+      before { get '/api/answers' }
   
       it 'returns answers' do
         # Note `json` is a custom helper to parse JSON responses
@@ -23,8 +23,8 @@
     end
   
     # Test suite for GET /answers/:id
-    describe 'GET /answers/:id' do
-      before { get "/answers/#{answer_id}" }
+    describe 'GET /api/answers/:id' do
+      before { get "/api/answers/#{answer_id}" }
   
       context 'when the record exists' do
         it 'returns the todo' do
@@ -45,18 +45,18 @@
         end
   
         it 'returns a not found message' do
-          expect(response.body).to match(/Couldn't find Todo/)
+          expect(response.body).to match(/Couldn't find Answer/)
         end
       end
     end
   
     # Test suite for POST 
-    describe 'POST /answers' do
+    describe 'POST /api/answers' do
       # valid payload
       let(:valid_attributes) { { option: 'option', score: 5, created_by: '1' } }
   
       context 'when the request is valid' do
-        before { post '/answers', params: valid_attributes }
+        before { post '/api/answers', params: valid_attributes }
   
         it 'creates a answer' do
           expect(json['option']).to eq('option')
@@ -68,7 +68,7 @@
       end
   
       context 'when the request is invalid' do
-        before { post '/answers', params: { option: 'Foobar' } }
+        before { post '/api/answers', params: { option: 'Foobar' } }
   
         it 'returns status code 422' do
           expect(response).to have_http_status(422)
@@ -82,7 +82,7 @@
     end
   
     # Test suite for PUT /answers/:id
-    describe 'PUT /answers/:id' do
+    describe 'PUT /api/answers/:id' do
       let(:valid_attributes) { { option: 'another' } }
   
       context 'when the record exists' do
@@ -99,7 +99,7 @@
     end
   
     # Test suite for DELETE /answers/:id
-    describe 'DELETE /answers/:id' do
+    describe 'DELETE /api/answers/:id' do
       before { delete "/answers/#{answer_id}" }
   
       it 'returns status code 204' do
