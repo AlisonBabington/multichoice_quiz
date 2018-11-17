@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { questionsFetchData } from '../actions/questions';
+import { answersFetchData } from '../actions/answers';
 
 
 class Main extends Component {
 
     componentDidMount () {
-        this.props.fetchData()
+        this.props.fetchQuestionData()
+        this.props.fetchAnswerData()
     }
     
     render (){
-
         return (
             <div>
                 <ul>
                 <h1>hi</h1>
-                    {/* {this.props.questions.map((question) => <li key = {question.id}>{question.question} </li>)} */}
+                  <h2></h2>
                 </ul>
             </div>
         )
@@ -25,14 +26,15 @@ class Main extends Component {
 const mapStateToProps = (state) => {
     return {
         state,
-        questions: state.questions
-        
+        questions: state.questions,
+        answers: state.answers   
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: (url) => dispatch(questionsFetchData())
+        fetchQuestionData: () => dispatch(questionsFetchData()),
+        fetchAnswerData: () => dispatch(answersFetchData())
     };
 };
 
