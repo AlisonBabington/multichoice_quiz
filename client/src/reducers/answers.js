@@ -5,6 +5,11 @@ export function answers(state = {}, action) {
                 ...state,
                 answers: action.answers
             }
+        case 'CURRENT_ANSWERS':
+            return {
+                ...state,
+                currentAnswers : action.answers
+            }
         default:
             return state;
     }

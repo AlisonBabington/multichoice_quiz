@@ -7,6 +7,13 @@ export function setAnswersData(answers) {
     }
 }
 
+export function currentAnswersChosen(answers) {
+    return {
+        type: 'CURRENT_ANSWERS',
+        answers
+    }
+}
+
 export function answersFetchData() {
     return function(dispatch) {
       return axios.get("/api/answers")

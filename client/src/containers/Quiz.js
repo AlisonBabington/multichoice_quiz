@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuizForm from '../components/QuizForm';
 import { currentQuestionChosen } from '../actions/questions'
+import { currentAnswersChosen} from '../actions/answers'
 
 class Quiz extends Component {
     constructor(props) {
@@ -13,21 +14,20 @@ class Quiz extends Component {
             const currentQuestion = this.props.questions.questions.find((question) => question.id === this.props.userName.userPosition)
             this.props.setCurrentQuestion(currentQuestion)
         }
+
+    setCurrentAnswers() {
+         const currentAnswers = this.props.answers.answers.filter((answer) => answer.question_id === this.props.userName.userPosition)
+         this.props.setCurrentAnswers(currentAnswers)
+    }
         
     componentDidMount () {
         this.setCurrentQuestion();
+        this.setCurrentAnswers();
     }
 
     handleAnswerSubmit(answer) {
         //set score by answer value here
     }
-
-   
-
-    // setCurrentAnswers() {
-    //     const currentAnswers = this.props.currentAnswers.filter((answer) => answer.question.id === this.props.userPosition)
-    //     this.props.currentAnswers(currentAnswers)
-    // }
 
     render () {
 
@@ -51,8 +51,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-          setCurrentQuestion: (question) => dispatch(currentQuestionChosen(question)), 
-        // currentAnswers: (answers) => dispatch(setCurrentAnswers(answers))  
+        setCurrentQuestion: (question) => dispatch(currentQuestionChosen(question)), 
+        setCurrentAnswers: (answers) => dispatch(currentAnswersChosen(answers))  
     };
 };
 
