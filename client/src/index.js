@@ -5,7 +5,7 @@ import Main from './containers/Main';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 
 
 //initialise store

@@ -1,5 +1,5 @@
 import React from 'react';
-import { userName } from '../reducers/user';
+import { Level } from 'bulma';
 
 const UserInfo = ({users}) => {
      
@@ -8,7 +8,12 @@ const UserInfo = ({users}) => {
     }
 
      return (
-         <h4>{users.name}: {users.score}</h4>
+         <Level>
+             <level-right>
+                 <level-item>{users.name}: {users.score}</level-item>
+             </level-right>
+         </Level>
+         
      )
 }
 

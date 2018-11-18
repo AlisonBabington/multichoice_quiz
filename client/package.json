@@ -5,6 +5,9 @@
   "dependencies": {
     "@types/redux-form": "^7.4.12",
     "axios": "^0.18.0",
+    "bloomer": "^0.6.5",
+    "bulma": "^0.7.2",
+    "node-sass": "^4.10.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^5.1.1",
@@ -40,18 +43,19 @@
     "jest": "^23.6.0",
     "react-test-renderer": "^16.6.3"
   },
-  "jest": { 
-      "snapshotSerializers": ["enzyme-to-json/serializer"],
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "clearMocks": true,
     "collectCoverage": true,
     "setupTestFrameworkScriptFile": "<rootDir>/__tests__/setup/setupEnzyme.js",
     "transform": {
-        "{^.+\\.js$": "babel-jest"
+      "{^.+\\.js$": "babel-jest"
     },
     "moduleNameMapper": {
-        "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-        "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
     }
-}
-
+  }
 }
