@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/redux-form": "^7.4.12",
+    "@types/shuffle-array": "0.0.28",
     "axios": "^0.18.0",
     "bloomer": "^0.6.5",
     "bulma": "^0.7.2",
@@ -16,7 +17,8 @@
     "redux": "^4.0.1",
     "redux-form": "^7.4.2",
     "redux-mock-store": "^1.5.3",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "shuffle-array": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

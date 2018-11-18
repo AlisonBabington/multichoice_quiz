@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import QuizForm from '../components/QuizForm';
 import { updateScore } from '../actions/quizzes';
 import UserInfo from '../components/UserInfo';
+import shuffle from 'shuffle-array';
 
 class Quiz extends Component {
     constructor(props) {
@@ -21,8 +22,10 @@ class Quiz extends Component {
     }
 
     setCurrentAnswers() {
-         const currentAnswers = this.props.answers.answers.filter((answer) => answer.question_id === this.state.currentIndex)
-         this.setState({currentAnswers: currentAnswers})
+        const currentAnswers = this.props.answers.answers.filter((answer) => answer.question_id === this.state.currentIndex) 
+        shuffle(currentAnswers);
+        console.log(currentAnswers)
+        this.setState({currentAnswers: currentAnswers})
     }
 
     sortOptions() {

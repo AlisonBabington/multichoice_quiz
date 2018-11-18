@@ -5,7 +5,6 @@ import { Input } from 'bloomer/lib/elements/Form/Input';
 import { Field } from 'bloomer/lib/elements/Form/Field/Field';
 import { FieldLabel } from 'bloomer/lib/elements/Form/Field/FieldLabel';
 import { Control } from 'bloomer/lib/elements/Form/Control';
-import { isLeft } from 'bloomer/lib/bulma';
 
 const UserNameForm = ({handleSubmit}) => {
     
