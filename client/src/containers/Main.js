@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { questionsFetchData } from '../actions/questions';
 import { answersFetchData } from '../actions/answers';
 import UserName from './UserName';
+import Quiz from './Quiz'
 
 
 class Main extends Component {
@@ -18,6 +19,7 @@ class Main extends Component {
             <Router>
             <Fragment>
                <Route exact path='/' component={UserName}/>
+               <Route exact path='/question' component={Quiz}/>
             </Fragment>
             </Router>
         )
