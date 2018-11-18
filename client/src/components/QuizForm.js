@@ -22,13 +22,11 @@ const QuizForm= ({handleSubmit, question, answers}) => {
    return (
        
     <form className='quiz' onSubmit={handleSubmit}>
-        
             <label>{question.question}</label>
             <ul>
                 {answerOptions}
             </ul>
-
-        <button type='submit'>Edit User</button>
+        <button type='submit'>Submit Answer</button>
     </form>
 
     );
