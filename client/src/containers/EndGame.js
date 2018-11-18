@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class EndGame extends Component {
     constructor(props){
@@ -7,10 +8,21 @@ class EndGame extends Component {
 
     render () {
         return (
-            <h1>END GAME</h1>
+            <div>
+                <h1>Game over!</h1>
+                <h3>Well done {this.props.userName.name}, you scored {this.props.userName.score}!</h3>
+            </div>
         )
     }
 
 }
 
-export default EndGame;
+const mapStateToProps = (state) => {
+    console.log(state)
+    return {
+        userName: state.userName
+    }
+}
+
+
+export default connect(mapStateToProps)(EndGame);

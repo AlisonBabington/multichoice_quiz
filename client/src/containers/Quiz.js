@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuizForm from '../components/QuizForm';
-import { currentQuestionChosen } from '../actions/questions';
-import { currentAnswersChosen} from '../actions/answers';
-import { updateScore } from '../actions/quizzes'
+import { updateScore } from '../actions/quizzes';
 
 class Quiz extends Component {
     constructor(props) {
@@ -39,6 +37,7 @@ class Quiz extends Component {
     handleAnswerSubmit(event) {
        event.preventDefault();
        const answerScore = parseInt(event.target.value)
+       this.props.markAnswer(answerScore);
        this.setState({currentIndex: this.state.currentIndex + 1}, () => this.sortOptions())
 
     }
