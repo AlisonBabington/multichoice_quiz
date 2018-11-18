@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuizForm from '../components/QuizForm';
 import { updateScore } from '../actions/quizzes';
+import UserInfo from '../components/UserInfo';
 
 class Quiz extends Component {
     constructor(props) {
@@ -52,7 +53,7 @@ class Quiz extends Component {
         
         return (
             <div>
-            <h2>hi!</h2>
+            <UserInfo users = {this.props.userName}/>
             <QuizForm onClick = {this.handleAnswerSubmit} question = {this.state.currentQuestion} answers = {this.state.currentAnswers}/>
             </div>
         )
