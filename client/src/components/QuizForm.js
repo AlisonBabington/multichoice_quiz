@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 
 
-const QuizForm= ({handleSubmit, question, answers}) => {
+const QuizForm= ({onClick, question, answers}) => {
     
     if (!question || !answers) {
         return null;
@@ -11,7 +11,7 @@ const QuizForm= ({handleSubmit, question, answers}) => {
     const answerOptions = answers.map ((answer) => {
         return  <Fragment key={answer.id}>
                     <label>
-                        <input type="radio" value={answer.score} />
+                        <input type="radio" value={answer.score} onClick={onClick}/>
                         {answer.option}
                     </label>
                 <br></br>
@@ -21,12 +21,11 @@ const QuizForm= ({handleSubmit, question, answers}) => {
 
    return (
        
-    <form className='quiz' onSubmit={handleSubmit}>
+    <form className='quiz' >
             <label>{question.question}</label>
             <ul>
                 {answerOptions}
             </ul>
-        <button type='submit'>Submit Answer</button>
     </form>
 
     );
