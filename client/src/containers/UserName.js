@@ -2,6 +2,8 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import { renderToJson } from 'enzyme-to-json';
 import UserNameForm from '../components/UserNameForm';
+import { userNameInput } from '../actions/userName';
+import { reduxForm} from 'redux-form'
 
 //container component
 class UserName extends Component {
@@ -10,24 +12,19 @@ class UserName extends Component {
         this.handleNameFormSubmit = this.handleNameFormSubmit.bind(this)
     }
 
-    handleNameFormSubmit (name) {
-        
+    handleNameFormSubmit (event) {
+        event.preventDefault()
+        const userName = event.target.name.value
+        this.props.userNameExists(userName)
     }
-
-
 
     render() {
         return (
-            <UserNameForm/>
+            <UserNameForm handleSubmit={this.handleNameFormSubmit}/>
         )
     }
 
-//onclick method to pass down to usernameform which is a presentational component
-
-
 }
-
-
 
 const mapStateToProps = (state) => {
     return {
@@ -36,5 +33,18 @@ const mapStateToProps = (state) => {
     }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        userNameExists: (userName) => dispatch(userNameInput(userName)),   
+    };
+};
+
+const formConfiguration = {
+    form: 'userName'
+  }
+  
+
+UserName = reduxForm(formConfiguration)(UserName);
+
 //must connect to get state
-export default connect(mapStateToProps)(UserName);
+export default connect(mapStateToProps, mapDispatchToProps)(UserName);

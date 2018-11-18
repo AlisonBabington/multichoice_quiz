@@ -1,19 +1,17 @@
 import React from 'react';
-import { reduxForm, Form} from 'redux-form'
+import { Form, Field } from 'redux-form'
 
-const UserNameForm = props => {
-    const handleSubmit = props
+const UserNameForm = ({handleSubmit, onSubmit}) => {
+    
    return (
-       <div>
-            <Form onSubmit={(user) => handleSubmit(user)}>
-                <label htmlFor="user.name">name:</label>
-                <input model="user.name" id="user.name" />
-                <button type="submit">
-                    Start the quiz!
-                </button>
+        <div>
+            <Form model="user" onSubmit={handleSubmit}>
+            <label>Name</label>
+            <Field name="name" component="input" type="text" value="name"/>
+                <button type="submit">Start the quiz!</button>
             </Form>
         </div>
     );
             
 };
-export default (reduxForm({ form: 'userName'})(UserNameForm));
+export default UserNameForm;
