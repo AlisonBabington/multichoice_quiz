@@ -1,20 +1,24 @@
 import React from 'react';
 
 
-const QuizForm= ({handleSubmit, question}) => {
+const QuizForm= ({handleSubmit, question, answers}) => {
     
-    if (!question) {
+    if (!question || !answers) {
         return null;
     }
+
+    const answerOptions = answers.map ((answer) => {
+        return <li key={answer.id} value={answer.score}>{answer.option}</li>
+    })
 
    return (
        
     <form className='quiz' onSubmit={handleSubmit}>
         
             <label>{question.question}</label>
-            <label>answers</label>
-            <input style={{width: 200}} type="text" name="password" ></input>
-    
+            <ul>
+                {answerOptions}
+            </ul>
 
         <button type='submit'>Edit User</button>
       
