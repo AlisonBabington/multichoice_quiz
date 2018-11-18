@@ -20,7 +20,7 @@ const QuizForm= ({onClick, question, answers}) => {
    return (
        
     <form className='quiz' >
-            <label>{question.question}</label>
+            <label>Question {question.id}: {question.question}</label>
             <ul>
                 {answerOptions}
             </ul>
