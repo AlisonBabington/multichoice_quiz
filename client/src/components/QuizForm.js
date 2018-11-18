@@ -1,4 +1,9 @@
 import React, { Fragment } from "react";
+import { Box } from "bloomer/lib/elements/Box";
+import { Container } from "bloomer/lib/layout/Container";
+import { Field } from "bloomer/lib/elements/Form/Field/Field";
+import { Control } from "bloomer/lib/elements/Form/Control";
+import { Radio } from "bloomer/lib/elements/Form/Radio";
 
 const QuizForm= ({onClick, question, answers}) => {
     
@@ -7,24 +12,26 @@ const QuizForm= ({onClick, question, answers}) => {
     }
 
     const answerOptions = answers.map ((answer) => {
-        return  <Fragment key={answer.id}>
-                    <label>
-                        <input type="radio" value={answer.score} onClick={onClick}/>
-                        {answer.option}
-                    </label>
-                <br></br>
-                </Fragment>
-        
+        return  <div>
+                    <Radio key = {answer.id} value={answer.score} onClick={onClick}>  {answer.option}</Radio> 
+                </div>
+                
     })
 
+ 
    return (
-       
-    <form className='quiz' >
-            <label>Question {question.id}: {question.question}</label>
-            <ul>
-                {answerOptions}
-            </ul>
-    </form>
+        <Box style={{maxWidth: 500, marginLeft: 450, marginTop: 40}}>
+            <Container isFluid >
+                <form className='quiz' >
+                    <label>Question {question.id}: {question.question}</label>
+                        <Field>
+                            <Control>
+                                {answerOptions}
+                            </Control>
+                        </Field>
+                </form>
+            </Container>
+        </Box>
 
     );
             

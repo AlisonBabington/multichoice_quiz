@@ -50,7 +50,7 @@ class Quiz extends Component {
     }
 
     render () {
-        
+    
         return (
             <div>
                 <UserInfo users = {this.props.userName}/>
@@ -62,7 +62,6 @@ class Quiz extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         ...state,
         currentPosition: state.userName.userPosition,

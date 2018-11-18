@@ -9,6 +9,7 @@ class EndGame extends Component {
     render () {
         return (
             <div>
+                <En
                 <h1>Game over!</h1>
                 <h3>Well done {this.props.userName.name}, you scored {this.props.userName.score}!</h3>
             </div>
