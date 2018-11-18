@@ -5,14 +5,12 @@ export function userName(state = {}, action) {
                 ...state, 
                 score: 0,
                 gamePlay: true,
-                userPosition: 1,
                 name: action.name
             }
         case 'ANSWER_MARKED': {
             return {
                 ...state,
                 score: state.score + action.option,
-                userPosition: state.userPosition +1
             }
         }
         default:

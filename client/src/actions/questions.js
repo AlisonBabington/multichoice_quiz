@@ -7,13 +7,6 @@ export function setQuestionData(questions) {
     }
 }
 
-export function currentQuestionChosen(question) {
-    return {
-        type: 'CURRENT_QUESTION',
-        question
-    }
-}
-
 export function questionsFetchData() {
     return function(dispatch) {
       return axios.get("/api/questions")

@@ -7,11 +7,6 @@ export function questions(state = {}, action) {
                 ...state,
                 questions: action.questions
             }
-        case 'CURRENT_QUESTION':
-            return {
-                ...state,
-                currentQuestion : action.question
-            }
         default:
             return state;
     }
