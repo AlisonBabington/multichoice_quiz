@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { questions } from './questions';
 import { answers } from './answers';
-import { userName } from './userName';
+import { userName } from './user';
 
 
 

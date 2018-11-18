@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuizForm from '../components/QuizForm';
-import { currentQuestionChosen } from '../actions/questions'
-import { currentAnswersChosen} from '../actions/answers'
+import { currentQuestionChosen } from '../actions/questions';
+import { currentAnswersChosen} from '../actions/answers';
+import { updateScore } from '../actions/quizzes'
 
 class Quiz extends Component {
     constructor(props) {
@@ -11,9 +12,9 @@ class Quiz extends Component {
     }
 
     setCurrentQuestion() {
-            const currentQuestion = this.props.questions.questions.find((question) => question.id === this.props.userName.userPosition)
-            this.props.setCurrentQuestion(currentQuestion)
-        }
+        const currentQuestion = this.props.questions.questions.find((question) => question.id === this.props.userName.userPosition)
+        this.props.setCurrentQuestion(currentQuestion)
+    }
 
     setCurrentAnswers() {
          const currentAnswers = this.props.answers.answers.filter((answer) => answer.question_id === this.props.userName.userPosition)
@@ -27,7 +28,8 @@ class Quiz extends Component {
 
     handleAnswerSubmit(event) {
        event.preventDefault();
-       console.log(event.target)
+       const answerScore = parseInt(event.target.value)
+       this.props.markAnswer(answerScore)
     }
 
     render () {
@@ -43,10 +45,13 @@ class Quiz extends Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state)
     return {
         ...state,
         currentQuestion: state.currentQuestion,
-        currentAnswers: state.currentAnswers
+        currentAnswers: state.currentAnswers,
+        currentPosition: state.userName.userPosition,
+        score: state.userName.score
     }
 }
 
@@ -54,7 +59,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         setCurrentQuestion: (question) => dispatch(currentQuestionChosen(question)), 
         setCurrentAnswers: (answers) => dispatch(currentAnswersChosen(answers)), 
-        // markAnswer: (answerScore) => dispatch(markAnswer(answerScore))
+        markAnswer: (answerScore) => dispatch(updateScore(answerScore))
     };
 };
 

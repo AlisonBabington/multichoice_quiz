@@ -1,4 +1,4 @@
-export function scoreAnswers(option) {
+export function updateScore(option) {
     return {
         type: 'ANSWER_MARKED',
         option

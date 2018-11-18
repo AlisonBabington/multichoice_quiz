@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import UserNameForm from '../components/UserNameForm';
-import { userNameInput } from '../actions/userName';
+import { userNameInput } from '../actions/user';
 import { Redirect } from 'react-router-dom';
 
 //container component

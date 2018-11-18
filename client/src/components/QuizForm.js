@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
 
-
-
 const QuizForm= ({onClick, question, answers}) => {
     
     if (!question || !answers) {
