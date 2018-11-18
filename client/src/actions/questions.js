@@ -8,7 +8,6 @@ export function setQuestionData(questions) {
 }
 
 export function currentQuestionChosen(question) {
-    console.log('hi', question)
     return {
         type: 'CURRENT_QUESTION',
         question

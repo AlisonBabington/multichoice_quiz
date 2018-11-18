@@ -10,12 +10,10 @@ class Quiz extends Component {
     }
 
     setCurrentQuestion() {
-        console.log(this.props.questions)
-        // const currentQuestion = this.props.questions.find((question) => question.id === this.props.userPosition)
-        // console.log(currentQuestion)
-        // this.props.currentQuestion(currentQuestion)
-    }
-
+            const currentQuestion = this.props.questions.questions.find((question) => question.id === this.props.userName.userPosition)
+            this.props.currentQuestion(currentQuestion)
+        }
+        
     componentDidMount () {
         this.setCurrentQuestion();
     }
