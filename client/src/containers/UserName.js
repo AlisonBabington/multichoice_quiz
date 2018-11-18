@@ -27,7 +27,7 @@ class UserName extends Component {
             <div>
             <Hero isColor="info" isSize="medium">
                 <HeroBody>
-                    <Container hasTextAlign='centered'>
+                    <Container >
                         <Title>Welcome to the Float Cash Flow Quiz!</Title>
                     </Container>
                 </HeroBody>

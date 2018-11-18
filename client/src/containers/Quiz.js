@@ -53,8 +53,8 @@ class Quiz extends Component {
         
         return (
             <div>
-            <UserInfo users = {this.props.userName}/>
-            <QuizForm onClick = {this.handleAnswerSubmit} question = {this.state.currentQuestion} answers = {this.state.currentAnswers}/>
+                <UserInfo users = {this.props.userName}/>
+                <QuizForm onClick = {this.handleAnswerSubmit} question = {this.state.currentQuestion} answers = {this.state.currentAnswers}/>
             </div>
         )
     }

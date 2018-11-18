@@ -1,5 +1,7 @@
 import React from 'react';
-import { Level } from 'bulma';
+import { Level } from 'bloomer';
+import { LevelRight } from 'bloomer/lib/components/Level/LevelRight';
+import { LevelItem } from 'bloomer/lib/components/Level/LevelItem';
 
 const UserInfo = ({users}) => {
      
@@ -9,9 +11,9 @@ const UserInfo = ({users}) => {
 
      return (
          <Level>
-             <level-right>
-                 <level-item>{users.name}: {users.score}</level-item>
-             </level-right>
+             <LevelRight>
+                 <LevelItem>{users.name}: {users.score}</LevelItem>
+             </LevelRight>
          </Level>
          
      )
