@@ -37,24 +37,21 @@
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
     "enzyme-to-json": "^3.3.4",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "react-test-renderer": "^16.6.3"
   },
-  "env": {
-    "test": {
-      "presets": [
-        [
-          "es2015",
-          {
-            "modules": false
-          }
-        ],
-        "react",
-        "stage-0"
-      ],
-      "plugins": [
-        "transform-es2015-modules-commonjs",
-        "dynamic-import-node"
-      ]
+  "jest": { 
+      "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "clearMocks": true,
+    "collectCoverage": true,
+    "setupTestFrameworkScriptFile": "<rootDir>/__tests__/setup/setupEnzyme.js",
+    "transform": {
+        "{^.+\\.js$": "babel-jest"
+    },
+    "moduleNameMapper": {
+        "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+        "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
     }
-  }
+}
+
 }

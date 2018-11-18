@@ -3,6 +3,7 @@ export function userName(state = {}, action) {
         case 'USER_NAME_INPUTTED':
             return {
                 ...state,
+                userPosition: 1,
                 name: action.name
             }
         default:

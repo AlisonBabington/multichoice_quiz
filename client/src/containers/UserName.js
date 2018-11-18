@@ -16,7 +16,7 @@ class UserName extends Component {
         event.preventDefault()
         const userName = event.target.name.value
         this.props.userNameExists(userName)
-        window.location.replace('/question')
+        this.props.history.push('/questions')
     }
 
     render() {

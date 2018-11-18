@@ -4,3 +4,4 @@ export function scoreAnswers(option) {
         option
     }
 }
+
