@@ -20,7 +20,7 @@ class Main extends Component {
             <Router>
                 <Fragment>
                     <Route exact path='/' component={UserName}/>
-                    <Route exact path='/questions' component={Quiz}/>
+                    <Route path='/questions/:position' component={Quiz}/>
                 </Fragment>
             </Router>
         )

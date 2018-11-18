@@ -26,6 +26,8 @@ class Quiz extends Component {
         this.setCurrentAnswers();
     }
 
+   
+
     handleAnswerSubmit(event) {
        event.preventDefault();
        const answerScore = parseInt(event.target.value)

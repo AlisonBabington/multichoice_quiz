@@ -1,5 +1,4 @@
 export function userName(state = {}, action) {
-   console.log(action)
     switch (action.type) {
         case 'USER_NAME_INPUTTED':
             return {
