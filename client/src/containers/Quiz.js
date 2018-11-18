@@ -11,7 +11,7 @@ class Quiz extends Component {
 
     setCurrentQuestion() {
             const currentQuestion = this.props.questions.questions.find((question) => question.id === this.props.userName.userPosition)
-            this.props.currentQuestion(currentQuestion)
+            this.props.setCurrentQuestion(currentQuestion)
         }
         
     componentDidMount () {
@@ -51,7 +51,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        currentQuestion: (question) => dispatch(currentQuestionChosen(question)), 
+          setCurrentQuestion: (question) => dispatch(currentQuestionChosen(question)), 
         // currentAnswers: (answers) => dispatch(setCurrentAnswers(answers))  
     };
 };
