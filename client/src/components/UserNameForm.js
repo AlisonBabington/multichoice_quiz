@@ -5,11 +5,11 @@ const UserNameForm = ({handleSubmit}) => {
     
    return (
         <div>
-            <Form model="user" onSubmit={handleSubmit}>
+            <form name="user" onSubmit={handleSubmit}>
             <label>Name</label>
-            <Field name="name" component="input" type="text" value="name"/>
+            <input name="name" component="input" type="text"/>
                 <button type="submit">Start the quiz!</button>
-            </Form>
+            </form>
         </div>
     );
             
