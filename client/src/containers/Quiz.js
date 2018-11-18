@@ -27,6 +27,7 @@ class Quiz extends Component {
     }
 
     sortOptions() {
+        this.endGame();
         this.setCurrentQuestion();
         this.setCurrentAnswers();
     }
@@ -40,6 +41,12 @@ class Quiz extends Component {
        const answerScore = parseInt(event.target.value)
        this.setState({currentIndex: this.state.currentIndex + 1}, () => this.sortOptions())
 
+    }
+
+    endGame() {
+        if (this.state.currentIndex > 10) {
+            this.props.history.push('/endGame')
+        }
     }
 
     render () {

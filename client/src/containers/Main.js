@@ -5,6 +5,7 @@ import { questionsFetchData } from '../actions/questions';
 import { answersFetchData } from '../actions/answers';
 import UserName from './UserName';
 import Quiz from './Quiz';
+import EndGame from './EndGame';
 
 
 class Main extends Component {
@@ -20,7 +21,8 @@ class Main extends Component {
             <Router>
                 <Fragment>
                     <Route exact path='/' component={UserName}/>
-                    <Route path='/questions/:position' component={Quiz}/>
+                    <Route exact path='/questions' component={Quiz}/>
+                    <Route exact path='/endGame' component={EndGame}/>
                 </Fragment>
             </Router>
         )
