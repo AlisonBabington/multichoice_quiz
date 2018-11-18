@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Box } from "bloomer/lib/elements/Box";
 import { Container } from "bloomer/lib/layout/Container";
 import { Field } from "bloomer/lib/elements/Form/Field/Field";
@@ -12,8 +12,8 @@ const QuizForm= ({onClick, question, answers}) => {
     }
 
     const answerOptions = answers.map ((answer) => {
-        return  <div>
-                    <Radio key = {answer.id} value={answer.score} onClick={onClick}>  {answer.option}</Radio> 
+        return  <div key = {answer.id}>
+                    <Radio value={answer.score} onClick={onClick}>  {answer.option}</Radio> 
                 </div>
                 
     })

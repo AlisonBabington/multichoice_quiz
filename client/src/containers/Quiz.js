@@ -24,7 +24,6 @@ class Quiz extends Component {
     setCurrentAnswers() {
         const currentAnswers = this.props.answers.answers.filter((answer) => answer.question_id === this.state.currentIndex) 
         shuffle(currentAnswers);
-        console.log(currentAnswers)
         this.setState({currentAnswers: currentAnswers})
     }
 

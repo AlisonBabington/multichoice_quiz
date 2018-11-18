@@ -4,10 +4,7 @@ import EndGameBox from '../components/EndGameBox';
 import UserInfo from '../components/UserInfo';
 
 class EndGame extends Component {
-    constructor(props){
-        super(props)
-    }
-
+   
     render () {
         return (
             <div>
