@@ -25,8 +25,8 @@ class Quiz extends Component {
         this.setCurrentAnswers();
     }
 
-    handleAnswerSubmit(answer) {
-        //set score by answer value here
+    handleAnswerSubmit(event) {
+       console.log(event)
     }
 
     render () {
@@ -52,7 +52,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         setCurrentQuestion: (question) => dispatch(currentQuestionChosen(question)), 
-        setCurrentAnswers: (answers) => dispatch(currentAnswersChosen(answers))  
+        setCurrentAnswers: (answers) => dispatch(currentAnswersChosen(answers)), 
+        // markAnswer: (answerScore) => dispatch(markAnswer(answerScore))
     };
 };
 

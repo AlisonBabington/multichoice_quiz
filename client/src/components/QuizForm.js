@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Fragment } from "react";
+
 
 
 const QuizForm= ({handleSubmit, question, answers}) => {
@@ -8,7 +9,14 @@ const QuizForm= ({handleSubmit, question, answers}) => {
     }
 
     const answerOptions = answers.map ((answer) => {
-        return <li key={answer.id} value={answer.score}>{answer.option}</li>
+        return  <Fragment key={answer.id}>
+                    <label>
+                        <input type="radio" value={answer.score} />
+                        {answer.option}
+                    </label>
+                <br></br>
+                </Fragment>
+        
     })
 
    return (
@@ -21,7 +29,6 @@ const QuizForm= ({handleSubmit, question, answers}) => {
             </ul>
 
         <button type='submit'>Edit User</button>
-      
     </form>
 
     );
