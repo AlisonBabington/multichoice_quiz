@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Field } from 'redux-form'
 
-const UserNameForm = ({handleSubmit, onSubmit}) => {
+const UserNameForm = ({handleSubmit}) => {
     
    return (
         <div>

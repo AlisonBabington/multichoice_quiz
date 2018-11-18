@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {  BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { questionsFetchData } from '../actions/questions';
 import { answersFetchData } from '../actions/answers';
@@ -12,15 +12,16 @@ class Main extends Component {
     componentDidMount () {
         this.props.fetchQuestionData()
         this.props.fetchAnswerData()
-        this.props.history.push('/home')
     }
     
     render (){
+
+
         return (
             <Router>
                 <Fragment>
-                    <Route exact path='/home' component={UserName}/>
-                    <Route exact path='/question' component={Quiz}/>
+                    <Route exact path='/' component={UserName}/>
+                    <Route exact path='/questions' component={Quiz}/>
                 </Fragment>
             </Router>
         )

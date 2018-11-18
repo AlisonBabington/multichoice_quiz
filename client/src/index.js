@@ -15,9 +15,7 @@ const store = configureStore();
 //makes store available to all containers without passing it
 render (
     <Provider store={store}>
-        <Router> 
-             <Route path='/' component={Main} />
-        </Router>
+             <Main/>
     </Provider>,
 document.getElementById('root')
 );

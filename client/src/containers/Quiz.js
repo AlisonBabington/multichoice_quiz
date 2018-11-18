@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuizForm from '../components/QuizForm';
-import { reduxForm } from 'redux-form';
-import { setCurrentQuestion } from '../actions/questions'
+import { currentQuestionChosen } from '../actions/questions'
 
 class Quiz extends Component {
     constructor(props) {
@@ -10,14 +9,22 @@ class Quiz extends Component {
         this.handleAnswerSubmit = this.handleAnswerSubmit.bind(this)
     }
 
+    setCurrentQuestion() {
+        console.log(this.props.questions)
+        // const currentQuestion = this.props.questions.find((question) => question.id === this.props.userPosition)
+        // console.log(currentQuestion)
+        // this.props.currentQuestion(currentQuestion)
+    }
+
+    componentDidMount () {
+        this.setCurrentQuestion();
+    }
+
     handleAnswerSubmit(answer) {
         //set score by answer value here
     }
 
-    setCurrentQuestion() {
-        const currentQuestion = this.props.questions.find((question) => question.id === this.props.userPosition)
-        this.props.currentQuestion(currentQuestion)
-    }
+   
 
     // setCurrentAnswers() {
     //     const currentAnswers = this.props.currentAnswers.filter((answer) => answer.question.id === this.props.userPosition)
@@ -29,15 +36,11 @@ class Quiz extends Component {
         return (
             <div>
             <h2>hi!</h2>
-            <QuizForm handleSubmit = {this.handleAnswerSubmit} question = {this.currentQuestion} answers = {this.currentAnswers}/>
+            <QuizForm handleSubmit = {this.handleAnswerSubmit} />
             </div>
         )
     }
 
-}
-
-const formConfiguration = {
-    form: 'Quiz'
 }
 
 const mapStateToProps = (state) => {
@@ -50,11 +53,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        currentQuestion: (question) => dispatch(setCurrentQuestion(question)), 
+        currentQuestion: (question) => dispatch(currentQuestionChosen(question)), 
         // currentAnswers: (answers) => dispatch(setCurrentAnswers(answers))  
     };
 };
 
-Quiz = reduxForm(formConfiguration)(Quiz);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quiz);

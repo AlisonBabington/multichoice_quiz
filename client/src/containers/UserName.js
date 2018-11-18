@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { renderToJson } from 'enzyme-to-json';
 import UserNameForm from '../components/UserNameForm';
 import { userNameInput } from '../actions/userName';
-import { reduxForm} from 'redux-form'
+import { reduxForm} from 'redux-form';
+import { Redirect } from 'react-router-dom';
 
 //container component
 class UserName extends Component {
@@ -16,11 +17,12 @@ class UserName extends Component {
         event.preventDefault()
         const userName = event.target.name.value
         this.props.userNameExists(userName)
-        this.props.history.push('/questions')
     }
 
     render() {
+         
         return (
+           
             <UserNameForm handleSubmit={this.handleNameFormSubmit}/>
         )
     }

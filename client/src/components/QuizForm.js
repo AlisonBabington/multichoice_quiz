@@ -1,17 +1,25 @@
 import React from 'react';
-import { Form, Field } from 'redux-form'
 
-const QuizForm= ({handleSubmit, onSubmit}) => {
+
+const QuizForm= ({handleSubmit}) => {
     
    return (
-        <div>
-            <Form model="user" onSubmit={handleSubmit}>
-            <label>Name</label>
-            <Field name="name" component="input" type="text" value="name"/>
-                <button type="submit">Start the quiz!</button>
-            </Form>
-        </div>
+   
+    <form className='quiz' onSubmit={handleSubmit}>
+        
+            <label>Question</label>
+            <input style={{width: 200}} type="text" name="name" />
+            <label>answers</label>
+            <input style={{width: 200}} type="text" name="password" ></input>
+    
+
+        <button type='submit'>Edit User</button>
+      
+    </form>
+
     );
             
 };
+
+
 export default QuizForm;

@@ -8,7 +8,7 @@ export function questions(state = {}, action) {
                 questions: action.questions
             }
         case 'CURRENT_QUESTION':
-        console.log(action)
+        console.log(action.question)
             return {
                 ...state,
                 currentQuestion : action.question
