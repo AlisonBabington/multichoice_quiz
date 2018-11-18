@@ -34,7 +34,7 @@ class Quiz extends Component {
         return (
             <div>
             <h2>hi!</h2>
-            <QuizForm handleSubmit = {this.handleAnswerSubmit} />
+            <QuizForm handleSubmit = {this.handleAnswerSubmit} question = {this.props.questions.currentQuestion}/>
             </div>
         )
     }

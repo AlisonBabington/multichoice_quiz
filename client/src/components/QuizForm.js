@@ -1,14 +1,17 @@
 import React from 'react';
 
 
-const QuizForm= ({handleSubmit}) => {
+const QuizForm= ({handleSubmit, question}) => {
     
+    if (!question) {
+        return null;
+    }
+
    return (
-   
+       
     <form className='quiz' onSubmit={handleSubmit}>
         
-            <label>Question</label>
-            <input style={{width: 200}} type="text" name="name" />
+            <label>{question.question}</label>
             <label>answers</label>
             <input style={{width: 200}} type="text" name="password" ></input>
     
