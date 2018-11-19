@@ -6,6 +6,11 @@ import UserInfo from '../components/UserInfo';
 class EndGame extends Component {
    
     render () {
+      
+        if (!this.props.userName.name) {
+           window.location.href = "/"
+        }
+
         return (
             <div>
                 <UserInfo users = {this.props.userName}/>
@@ -18,6 +23,7 @@ class EndGame extends Component {
 
 const mapStateToProps = (state) => {
     return {
+       
         userName: state.userName
     }
 }

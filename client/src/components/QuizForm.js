@@ -18,7 +18,6 @@ const QuizForm= ({onClick, question, answers}) => {
                 
     })
 
- 
    return (
         <Box style={{maxWidth: 500, marginLeft: 450, marginTop: 40}}>
             <Container isFluid >
@@ -36,6 +35,5 @@ const QuizForm= ({onClick, question, answers}) => {
     );
             
 };
-
 
 export default QuizForm;

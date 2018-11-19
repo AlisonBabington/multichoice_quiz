@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box } from 'bloomer/lib/elements/Box';
 
-
 const EndGameBox = ({user}) => {
 
     return (
