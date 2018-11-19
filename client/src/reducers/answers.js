@@ -1,5 +1,4 @@
 export function answers(state = {}, action) {
-    console.log(state)
     switch (action.type) {
         case 'ANSWERS_LOADED':
             return {
