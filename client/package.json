@@ -9,6 +9,7 @@
     "babel": "^6.23.0",
     "bloomer": "^0.6.5",
     "bulma": "^0.7.2",
+    "eslint": "^5.6.0",
     "jest": "^23.6.0",
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
@@ -40,15 +41,16 @@
     "babel-jest": "^23.6.0",
     "react-test-renderer": "^16.6.3"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "jest": {
-   
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/react-dom",
       "<rootDir>/node_modules/react-addons-test-utils",
       "<rootDir>/node_modules/fbjs"
     ],
-    
     "moduleFileExtensions": [
       "js",
       "jsx",
