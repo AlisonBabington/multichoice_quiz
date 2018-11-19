@@ -34,6 +34,7 @@ class Quiz extends Component {
     }
         
     componentDidMount () {
+        console.log('mount', this.props)
         this.sortOptions()
     }
 
@@ -53,6 +54,10 @@ class Quiz extends Component {
 
     render () {
     
+        if (!this.props.name) {
+            window.location.href = '/'
+        }
+    
         return (
             <div>
                 <UserInfo users = {this.props.userName}/>
@@ -66,7 +71,7 @@ class Quiz extends Component {
 const mapStateToProps = (state) => {
     return {
         ...state,
-        currentPosition: state.userName.userPosition,
+        name: state.userName.name,
         score: state.userName.score
     }
 }
