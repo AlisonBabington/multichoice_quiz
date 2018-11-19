@@ -1,24 +1,29 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A quiz game built with Ruby on Rails, React and Redux.
 
-Things you may want to cover:
+Cash Flow Quiz: 
 
-* Ruby version
+How to run it
 
-* System dependencies
+SERVER
+CD to the server folder and run in the terminal:
 
-* Configuration
+bundle install
 
-* Database creation
+Seed the database:
+rake db:migrate
+db:reset db:seed
 
-* Database initialization
 
-* How to run the test suite
+CLIENT
+Open another terminal window and, cd to the client folder and run:
 
-* Services (job queues, cache servers, search engines, etc.)
+npm i
+npm start
 
-* Deployment instructions
+Now you should be able to access the app at http://localhost:3000/quiz
 
-* ...
+Tests status
+Run rails tests from server folder with rails test
+Run jest tests from client folder with npm test
+
