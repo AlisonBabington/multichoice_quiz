@@ -16,7 +16,7 @@ const UserNameForm = ({handleSubmit}) => {
                     <Field>
                         <FieldLabel style={{float: 'left', marginTop: 25, marginBottom: 10}}>Please enter your name:</FieldLabel>
                         <Control>
-                            <Input style={{maxWidth: 250}} name="name" component="input" type="text"/>
+                            <Input style={{maxWidth: 250}} name="name" required="required" component="input" type="text"/>
                         </Control>
                     </Field>
                     <Button type="submit" isColor='info'>Start the quiz!</Button> 

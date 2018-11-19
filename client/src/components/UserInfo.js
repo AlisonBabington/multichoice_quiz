@@ -25,7 +25,7 @@ const UserInfo = ({users}) => {
             <HeroFooter>
                 <Level>
                     <LevelRight>
-                        <LevelItem><strong>{users.name}: {users.score}</strong></LevelItem>
+                        <LevelItem style={{marginLeft: 20}}><strong>{users.name}, you have {users.score} points</strong></LevelItem>
                     </LevelRight>
                 </Level> 
             </HeroFooter>
