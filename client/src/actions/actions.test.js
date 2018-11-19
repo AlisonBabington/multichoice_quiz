@@ -1,7 +1,7 @@
 import * as answerActions from './answers';
 import * as questionActions from './questions';
 import * as quizActions from './quizzes';
-import * as userActions from './users';
+import * as userActions from './user';
 import * as types from '../actiontypes/quiz';
 
 describe('answerActions', () => {
@@ -44,6 +44,6 @@ describe('quizActions', () => {
         type: types.USER_NAME_INPUTTED,
         name
       }
-      expect(userActions.userNameInput(name)).toEqual(expectedAction)
+      expect(userActions.user(name)).toEqual(expectedAction)
     })
   })

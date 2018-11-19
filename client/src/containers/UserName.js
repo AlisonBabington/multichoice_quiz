@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import UserNameForm from '../components/UserNameForm';
-import { userNameInput } from '../actions/user';
+import { user } from '../actions/user';
 import { Hero } from 'bloomer';
 import { HeroBody } from 'bloomer/lib/layout/Hero/HeroBody';
 import { Container } from 'bloomer/lib/layout/Container';
@@ -41,13 +41,13 @@ class UserName extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        userName: state.userName
+        userName: state.user
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        userNameExists: (userName) => dispatch(userNameInput(userName)),
+        userNameExists: (userName) => dispatch(user(userName)),
     };
 };
 

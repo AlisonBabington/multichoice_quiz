@@ -60,7 +60,7 @@ class Quiz extends Component {
 
         return (
             <div>
-                <UserInfo users={this.props.userName} />
+                <UserInfo users={this.props.user} />
                 <QuizForm onClick={this.handleAnswerSubmit} question={this.state.currentQuestion} answers={this.state.currentAnswers} />
             </div>
         )
@@ -71,8 +71,8 @@ class Quiz extends Component {
 const mapStateToProps = (state) => {
     return {
         ...state,
-        name: state.userName.name,
-        score: state.userName.score
+        name: state.user.name,
+        score: state.user.score
     }
 }
 

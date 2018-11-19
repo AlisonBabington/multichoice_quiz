@@ -7,14 +7,14 @@ class EndGame extends Component {
    
     render () {
       
-        if (!this.props.userName.name) {
+        if (!this.props.user.name) {
            window.location.href = "/"
         }
 
         return (
             <div>
-                <UserInfo users = {this.props.userName}/>
-                <EndGameBox user={this.props.userName}/>
+                <UserInfo users = {this.props.user}/>
+                <EndGameBox user={this.props.user}/>
             </div>
         )
     }
@@ -24,7 +24,7 @@ class EndGame extends Component {
 const mapStateToProps = (state) => {
     return {
        
-        userName: state.userName
+        user: state.user
     }
 }
 
