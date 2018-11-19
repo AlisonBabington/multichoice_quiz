@@ -41,7 +41,6 @@ class UserName extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        ...state,
         userName: state.userName
     }
 }

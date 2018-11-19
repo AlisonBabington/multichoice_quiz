@@ -12,7 +12,7 @@ const QuizForm= ({onClick, question, answers}) => {
     }
 
     const answerOptions = answers.map ((answer) => {
-        return  <div key = {answer.id}>
+        return  <div key = {answer.id} style={{margin: 10}}>
                     <Radio value={answer.score} onClick={onClick}>  {answer.option}</Radio> 
                 </div>
                 
@@ -23,7 +23,7 @@ const QuizForm= ({onClick, question, answers}) => {
         <Box style={{maxWidth: 500, marginLeft: 450, marginTop: 40}}>
             <Container isFluid >
                 <form className='quiz' >
-                    <label>Question {question.id}: {question.question}</label>
+                    <label><strong>Question {question.id}: {question.question}</strong></label>
                         <Field>
                             <Control>
                                 {answerOptions}
