@@ -1,7 +1,8 @@
 
 A quiz game built with Ruby on Rails, React and Redux.
 
-Cash Flow Quiz: 
+Cash Flow Quiz:
+
 
 How to run it
 
