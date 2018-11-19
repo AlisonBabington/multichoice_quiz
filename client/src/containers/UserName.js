@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import UserNameForm from '../components/UserNameForm';
 import { userNameInput } from '../actions/user';
@@ -14,7 +14,7 @@ class UserName extends Component {
         this.handleNameFormSubmit = this.handleNameFormSubmit.bind(this)
     }
 
-    handleNameFormSubmit (event) {
+    handleNameFormSubmit(event) {
         event.preventDefault()
         const userName = event.target.name.value
         this.props.userNameExists(userName)
@@ -22,19 +22,19 @@ class UserName extends Component {
     }
 
     render() {
- 
+
         return (
             <div>
-            <Hero isColor="info" isSize="medium">
-                <HeroBody>
-                    <Container >
-                        <Title>Welcome to the Float Cash Flow Quiz!</Title>
-                    </Container>
-                </HeroBody>
-            </Hero>
-                <UserNameForm handleSubmit={this.handleNameFormSubmit}/>
+                <Hero isColor="info" isSize="medium">
+                    <HeroBody>
+                        <Container >
+                            <Title>Welcome to the Float Cash Flow Quiz!</Title>
+                        </Container>
+                    </HeroBody>
+                </Hero>
+                <UserNameForm handleSubmit={this.handleNameFormSubmit} />
             </div>
-        ) 
+        )
     }
 
 }
@@ -47,7 +47,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        userNameExists: (userName) => dispatch(userNameInput(userName)),   
+        userNameExists: (userName) => dispatch(userNameInput(userName)),
     };
 };
 

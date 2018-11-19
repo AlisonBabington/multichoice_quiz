@@ -9,13 +9,13 @@ import { LevelRight } from 'bloomer/lib/components/Level/LevelRight';
 import { LevelItem } from 'bloomer/lib/components/Level/LevelItem';
 
 
-const UserInfo = ({users}) => {
-     
+const UserInfo = ({ users }) => {
+
     if (!users) {
         return null;
     }
 
-     return (
+    return (
         <Hero isColor="info" isSize="small">
             <HeroBody>
                 <Container >
@@ -25,14 +25,14 @@ const UserInfo = ({users}) => {
             <HeroFooter>
                 <Level>
                     <LevelRight>
-                        <LevelItem style={{marginLeft: 20}}><strong>{users.name}, you have {users.score} points</strong></LevelItem>
+                        <LevelItem style={{ marginLeft: 20 }}><strong>{users.name}, you have {users.score} points</strong></LevelItem>
                     </LevelRight>
-                </Level> 
+                </Level>
             </HeroFooter>
         </Hero>
-            
-         
-     )
+
+
+    )
 }
 
 export default UserInfo;

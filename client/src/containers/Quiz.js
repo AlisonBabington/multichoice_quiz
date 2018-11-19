@@ -9,7 +9,7 @@ class Quiz extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentIndex : 1,
+            currentIndex: 1,
             currentQuestion: null,
             currentAnswers: null
         }
@@ -18,13 +18,13 @@ class Quiz extends Component {
 
     setCurrentQuestion() {
         const currentQuestion = this.props.questions.questions.find((question) => question.id === this.state.currentIndex)
-        this.setState({currentQuestion: currentQuestion})
+        this.setState({ currentQuestion: currentQuestion })
     }
 
     setCurrentAnswers() {
-        const currentAnswers = this.props.answers.answers.filter((answer) => answer.question_id === this.state.currentIndex) 
+        const currentAnswers = this.props.answers.answers.filter((answer) => answer.question_id === this.state.currentIndex)
         shuffle(currentAnswers);
-        this.setState({currentAnswers: currentAnswers})
+        this.setState({ currentAnswers: currentAnswers })
     }
 
     sortOptions() {
@@ -32,17 +32,17 @@ class Quiz extends Component {
         this.setCurrentQuestion();
         this.setCurrentAnswers();
     }
-        
-    componentDidMount () {
+
+    componentDidMount() {
         console.log('mount', this.props)
         this.sortOptions()
     }
 
     handleAnswerSubmit(event) {
-       event.preventDefault();
-       const answerScore = parseInt(event.target.value)
-       this.props.markAnswer(answerScore);
-       this.setState({currentIndex: this.state.currentIndex + 1}, () => this.sortOptions())
+        event.preventDefault();
+        const answerScore = parseInt(event.target.value)
+        this.props.markAnswer(answerScore);
+        this.setState({ currentIndex: this.state.currentIndex + 1 }, () => this.sortOptions())
 
     }
 
@@ -52,16 +52,16 @@ class Quiz extends Component {
         }
     }
 
-    render () {
-    
+    render() {
+
         if (!this.props.name) {
             window.location.href = '/'
         }
-    
+
         return (
             <div>
-                <UserInfo users = {this.props.userName}/>
-                <QuizForm onClick = {this.handleAnswerSubmit} question = {this.state.currentQuestion} answers = {this.state.currentAnswers}/>
+                <UserInfo users={this.props.userName} />
+                <QuizForm onClick={this.handleAnswerSubmit} question={this.state.currentQuestion} answers={this.state.currentAnswers} />
             </div>
         )
     }

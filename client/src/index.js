@@ -13,11 +13,11 @@ const store = configureStore();
 
 
 //makes store available to all containers without passing it
-render (
+render(
     <Provider store={store}>
-             <Main/>
+        <Main />
     </Provider>,
-document.getElementById('root')
+    document.getElementById('root')
 );
 
 store.dispatch({ type: 'GET_QUESTIONS' })

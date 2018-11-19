@@ -27,9 +27,6 @@
     "test": "jest",
     "test:watch": "jest --watch"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -39,9 +36,6 @@
   "proxy": "http://localhost:3001",
   "devDependencies": {
     "babel-jest": "^23.6.0",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.7.0",
-    "enzyme-to-json": "^3.3.4",
     "jest": "^23.6.0",
     "react-test-renderer": "^16.6.3"
   },

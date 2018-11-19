@@ -7,7 +7,7 @@ const EndGameBox = ({user}) => {
         <div>
             <Box style={{margin: 250}}>
                 <h1>Game over!</h1>
-                <h3>Well done {user.name}, you scored {user.score}!</h3>
+                <h3>Well done {user.name}, you scored {user.score} points!</h3>
             </Box>
         </div>
     )

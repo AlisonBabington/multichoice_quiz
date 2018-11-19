@@ -8,13 +8,13 @@ export function setQuestionData(questions) {
 }
 
 export function questionsFetchData() {
-    return function(dispatch) {
-      return axios.get("/api/questions")
-        .then(({ data }) =>  dispatch(setQuestionData(data)))
-        .catch((error) => {
-           console.log(error)
-        });
-  }
+    return function (dispatch) {
+        return axios.get("/api/questions")
+            .then(({ data }) => dispatch(setQuestionData(data)))
+            .catch((error) => {
+                console.log(error)
+            });
+    }
 
 }
 
