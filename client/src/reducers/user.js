@@ -1,10 +1,9 @@
-export function userName(state = {}, action) {
+export function user(state = {}, action) {
     switch (action.type) {
         case 'USER_NAME_INPUTTED':
             return {
                 ...state,
                 score: 0,
-                gamePlay: true,
                 name: action.name
             }
         case 'ANSWER_MARKED': {
