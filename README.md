@@ -16,12 +16,12 @@ db:reset db:seed
 
 
 CLIENT
-Open another terminal window and, cd to the client folder and run:
+Open a second terminal window, cd to the client folder and run:
 
 npm i
 npm start
 
-Now you should be able to access the app at http://localhost:3000/quiz
+The app will now be available at: http://localhost:3000/quiz
 
 Tests status
 Run rails tests from server folder with rails test
